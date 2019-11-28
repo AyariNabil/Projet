@@ -1,22 +1,15 @@
 #ifndef LOGIN_H
 #define LOGIN_H
+#include "QString"
 
-#include <QDialog>
-
-namespace Ui {
-class login;
-}
-
-class login : public QDialog
+class login
 {
-    Q_OBJECT
-
 public:
-    explicit login(QWidget *parent = nullptr);
-    ~login();
 
-private:
-    Ui::login *ui;
+    QString user_name;
+     long mot_pass;
+     login();
+     login(QString, long);
 };
 
 #endif // LOGIN_H

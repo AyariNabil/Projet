@@ -1,13 +1,36 @@
- #include "connexion.h"
+#include "connexion.h"
+#include "QDebug"
+#include "QSqlDatabase"
+#include <QApplication>
+#include "QDebug"
+#include "QSqlError"
 #include <QSqlError>
-connexion::connexion(){
-                      }
-bool connexion::ouvrirConnexion()
+Connexion::Connexion()
+{
+
+}
+bool Connexion::connect()
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    db.setDatabaseName("jihene");
+    db.setUserName("loujein1");
+    db.setPassword("loujein1");
+    if(db.open())
+    {
+        qDebug()<<"Basse de donne de khaled et abdo et bien connecté :D  !! ";
+        return true;
+    }
+    {
+        qDebug()<<db.lastError();
+    return false;
+    }
+}
+bool Connexion::ouvrirConnexion()
 {bool test=false;
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-                          db.setDatabaseName("project c++");
-                          db.setUserName("saidimoetaz");//inserer nom de l'utilisateur
-                           db.setPassword("esprit");//inserer mot de passe de cet utilisateur
+                           db.setDatabaseName("jihene");
+                           db.setUserName("loujein1");//inserer nom de l'utilisateur
+                           db.setPassword("loujein1");//inserer mot de passe de cet utilisateur
 
 if (db.open())
     test=true;
@@ -15,5 +38,5 @@ if (db.open())
 else throw QString ("Erreur Paramétres"+db.lastError().text());
 return  test;
 }
-void connexion::fermerConnexion()
+void Connexion::fermerConnexion()
 {db.close();}

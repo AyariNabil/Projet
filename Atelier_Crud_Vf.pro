@@ -6,13 +6,9 @@
 
 QT       += core gui sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Crud_Vf
-TARGET = test
-TEMPLATE = app
-
-
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -29,32 +25,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    login.cpp \
         main.cpp \
         mainwindow.cpp \
     connexion.cpp \
-    offre.cpp \
-    publicites.cpp
+    remb.cpp \
+    type.cpp
 
 HEADERS += \
+    login.h \
         mainwindow.h \
     connexion.h \
-    offre.h \
-    publicites.h
+    remb.h \
+    type.h
 
 FORMS += \
+        login.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES +=
-
-DISTFILES += \
-    ../../../../Downloads/2 minute.wav \
-    ../../../../Downloads/2 minutes of relaxing music,2 minute meditation music,2 minute meditation for kids,music 2 minute.wav \
-    ../../../../Downloads/2 minutes of relaxing music,2 minute meditation music,2 minute meditation for kids,music 2 minute.wav \
-    ../../../../Downloads/2 minutes of relaxing music,2 minute meditation music,2 minute meditation for kids,music 2 minute.wav \
-    ../../../2 minute.wav \
-    ../../../2 minute.wav

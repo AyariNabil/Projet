@@ -1,14 +1,11 @@
 #include "login.h"
-#include "ui_login.h"
 
-login::login(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::login)
+login::login():user_name("user_name"), mot_pass(0)
 {
-    ui->setupUi(this);
+
 }
 
-login::~login()
+login::login(QString user_name, long mot_pass):user_name(user_name), mot_pass(mot_pass)
 {
-    delete ui;
+
 }
