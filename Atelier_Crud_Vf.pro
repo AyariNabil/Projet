@@ -25,25 +25,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    login.cpp \
         main.cpp \
         mainwindow.cpp \
     connexion.cpp \
-    remb.cpp \
-    type.cpp
+    reservation.cpp
 
 HEADERS += \
-    login.h \
         mainwindow.h \
     connexion.h \
-    remb.h \
-    type.h
+    reservation.h
 
 FORMS += \
-        login.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Ressources.qrc

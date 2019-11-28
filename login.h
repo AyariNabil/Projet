@@ -1,15 +1,27 @@
 #ifndef LOGIN_H
 #define LOGIN_H
-#include "QString"
 
-class login
+#include <QDialog>
+#include "reservation.h"
+
+namespace Ui {
+class login;
+}
+
+class login : public QDialog
 {
-public:
+    Q_OBJECT
 
-    QString user_name;
-     long mot_pass;
-     login();
-     login(QString, long);
+public:
+    explicit login(QWidget *parent = nullptr);
+    ~login();
+
+private slots:
+    void on_pushButton_clicked();
+
+private:
+    Ui::login *ui;
+    Reservation *reservation;
 };
 
 #endif // LOGIN_H
